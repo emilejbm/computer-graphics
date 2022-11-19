@@ -1,0 +1,10 @@
+# ninja log v5
+59	1880	1667868855713811893	CMakeFiles/cs334_beginner.dir/src/gui.cpp.o	d94322214a9a1c00
+1930	9211	1667868863049955511	CMakeFiles/cs334_beginner.dir/src/tm.cpp.o	9cb0bab6c766d605
+646	1864	1667868929699239158	cs334_beginner	13fd69af58945982
+1	646	1667868928487216139	CMakeFiles/cs334_beginner.dir/src/scene.cpp.o	19c60bad11959c6f
+58	1878	1667868855713811893	CMakeFiles/cs334_beginner.dir/src/CubeMap.cpp.o	b7b89d81e1eb426d
+16	1002	1667071496508066099	CMakeFiles/cs334_beginner.dir/src/V3.cpp.o	b71ba0d73f4786c8
+1879	3181	1667868857009837301	CMakeFiles/cs334_beginner.dir/src/ppc.cpp.o	3955a5918a669410
+4	954	1667071496460070593	CMakeFiles/cs334_beginner.dir/src/M33.cpp.o	6b4a58e726dacc80
+58	1930	1667868855765812912	CMakeFiles/cs334_beginner.dir/src/framebuffer.cpp.o	b0dbcfbb9e1aa8ea

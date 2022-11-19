@@ -1,0 +1,1 @@
+/usr/bin/c++     -pthread -rdynamic CMakeFiles/fltk-versions.dir/fltk-versions.cxx.o  -o ../bin/test/fltk-versions  ../lib/libfltk.a -ldl -lpthread -lSM -lICE -lX11 -lXext 

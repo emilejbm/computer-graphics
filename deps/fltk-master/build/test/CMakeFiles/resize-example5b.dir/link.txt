@@ -1,0 +1,1 @@
+/usr/bin/c++     -pthread -rdynamic CMakeFiles/resize-example5b.dir/resize-example5b.cxx.o CMakeFiles/resize-example5b.dir/resize-arrows.cxx.o  -o ../bin/test/resize-example5b  ../lib/libfltk.a -ldl -lpthread -lSM -lICE -lX11 -lXext 

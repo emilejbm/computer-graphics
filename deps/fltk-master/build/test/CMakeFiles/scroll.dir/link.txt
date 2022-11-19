@@ -1,0 +1,1 @@
+/usr/bin/c++     -pthread -rdynamic CMakeFiles/scroll.dir/scroll.cxx.o  -o ../bin/test/scroll  ../lib/libfltk.a -ldl -lpthread -lSM -lICE -lX11 -lXext 

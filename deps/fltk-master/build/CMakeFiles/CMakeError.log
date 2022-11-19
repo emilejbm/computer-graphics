@@ -1,0 +1,165 @@
+Determining if files alsa/asoundlib.h exist failed with the following output:
+Change Dir: /home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_35a53/fast && /usr/bin/make -f CMakeFiles/cmTC_35a53.dir/build.make CMakeFiles/cmTC_35a53.dir/build
+make[1]: Entering directory '/home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_35a53.dir/HAVE_ALSA_ASOUNDLIB_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_35a53.dir/HAVE_ALSA_ASOUNDLIB_H.c.o   -c /home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CheckIncludeFiles/HAVE_ALSA_ASOUNDLIB_H.c
+/home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CheckIncludeFiles/HAVE_ALSA_ASOUNDLIB_H.c:2:10: fatal error: alsa/asoundlib.h: No such file or directory
+    2 | #include <alsa/asoundlib.h>
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_35a53.dir/build.make:66: CMakeFiles/cmTC_35a53.dir/HAVE_ALSA_ASOUNDLIB_H.c.o] Error 1
+make[1]: Leaving directory '/home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_35a53/fast] Error 2
+
+
+Source:
+/* */
+#include <alsa/asoundlib.h>
+
+
+int main(void){return 0;}
+
+Determining if files OpenGL/glu.h exist failed with the following output:
+Change Dir: /home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_effd8/fast && /usr/bin/make -f CMakeFiles/cmTC_effd8.dir/build.make CMakeFiles/cmTC_effd8.dir/build
+make[1]: Entering directory '/home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_effd8.dir/HAVE_OPENGL_GLU_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_effd8.dir/HAVE_OPENGL_GLU_H.c.o   -c /home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CheckIncludeFiles/HAVE_OPENGL_GLU_H.c
+/home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CheckIncludeFiles/HAVE_OPENGL_GLU_H.c:2:10: fatal error: OpenGL/glu.h: No such file or directory
+    2 | #include <OpenGL/glu.h>
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_effd8.dir/build.make:66: CMakeFiles/cmTC_effd8.dir/HAVE_OPENGL_GLU_H.c.o] Error 1
+make[1]: Leaving directory '/home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_effd8/fast] Error 2
+
+
+Source:
+/* */
+#include <OpenGL/glu.h>
+
+
+int main(void){return 0;}
+
+Determining if files sys/stdtypes.h exist failed with the following output:
+Change Dir: /home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b4ae2/fast && /usr/bin/make -f CMakeFiles/cmTC_b4ae2.dir/build.make CMakeFiles/cmTC_b4ae2.dir/build
+make[1]: Entering directory '/home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b4ae2.dir/HAVE_SYS_STDTYPES_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_b4ae2.dir/HAVE_SYS_STDTYPES_H.c.o   -c /home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CheckIncludeFiles/HAVE_SYS_STDTYPES_H.c
+/home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CheckIncludeFiles/HAVE_SYS_STDTYPES_H.c:2:10: fatal error: sys/stdtypes.h: No such file or directory
+    2 | #include <sys/stdtypes.h>
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_b4ae2.dir/build.make:66: CMakeFiles/cmTC_b4ae2.dir/HAVE_SYS_STDTYPES_H.c.o] Error 1
+make[1]: Leaving directory '/home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_b4ae2/fast] Error 2
+
+
+Source:
+/* */
+#include <sys/stdtypes.h>
+
+
+int main(void){return 0;}
+
+Determining if the function strlcat exists failed with the following output:
+Change Dir: /home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_23379/fast && /usr/bin/make -f CMakeFiles/cmTC_23379.dir/build.make CMakeFiles/cmTC_23379.dir/build
+make[1]: Entering directory '/home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_23379.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=strlcat   -o CMakeFiles/cmTC_23379.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_23379
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_23379.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=strlcat    -rdynamic CMakeFiles/cmTC_23379.dir/CheckFunctionExists.c.o  -o cmTC_23379 
+/usr/bin/ld: CMakeFiles/cmTC_23379.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x14): undefined reference to `strlcat'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_23379.dir/build.make:87: cmTC_23379] Error 1
+make[1]: Leaving directory '/home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_23379/fast] Error 2
+
+
+
+Determining if the function strlcpy exists failed with the following output:
+Change Dir: /home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_58d11/fast && /usr/bin/make -f CMakeFiles/cmTC_58d11.dir/build.make CMakeFiles/cmTC_58d11.dir/build
+make[1]: Entering directory '/home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_58d11.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=strlcpy   -o CMakeFiles/cmTC_58d11.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_58d11
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58d11.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=strlcpy    -rdynamic CMakeFiles/cmTC_58d11.dir/CheckFunctionExists.c.o  -o cmTC_58d11 
+/usr/bin/ld: CMakeFiles/cmTC_58d11.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x14): undefined reference to `strlcpy'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_58d11.dir/build.make:87: cmTC_58d11] Error 1
+make[1]: Leaving directory '/home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_58d11/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_37004/fast && /usr/bin/make -f CMakeFiles/cmTC_37004.dir/build.make CMakeFiles/cmTC_37004.dir/build
+make[1]: Entering directory '/home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_37004.dir/src.c.o
+/usr/bin/cc  -I/usr/include/GL  -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_37004.dir/src.c.o   -c /home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_37004
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37004.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_37004.dir/src.c.o  -o cmTC_37004 
+/usr/bin/ld: CMakeFiles/cmTC_37004.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_37004.dir/build.make:87: cmTC_37004] Error 1
+make[1]: Leaving directory '/home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_37004/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9a96a/fast && /usr/bin/make -f CMakeFiles/cmTC_9a96a.dir/build.make CMakeFiles/cmTC_9a96a.dir/build
+make[1]: Entering directory '/home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9a96a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_9a96a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_9a96a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9a96a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_9a96a.dir/CheckFunctionExists.c.o  -o cmTC_9a96a  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_9a96a.dir/build.make:87: cmTC_9a96a] Error 1
+make[1]: Leaving directory '/home/emilejbm/Downloads/fltk-master_oh/fltk-master/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_9a96a/fast] Error 2
+
+
+

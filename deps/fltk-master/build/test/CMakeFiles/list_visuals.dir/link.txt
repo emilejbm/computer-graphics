@@ -1,0 +1,1 @@
+/usr/bin/c++     -pthread -rdynamic CMakeFiles/list_visuals.dir/list_visuals.cxx.o  -o ../bin/test/list_visuals  ../lib/libfltk.a -ldl -lpthread -lSM -lICE -lX11 -lXext 

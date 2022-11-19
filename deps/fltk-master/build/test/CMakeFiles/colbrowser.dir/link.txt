@@ -1,0 +1,1 @@
+/usr/bin/c++     -pthread -rdynamic CMakeFiles/colbrowser.dir/colbrowser.cxx.o  -o ../bin/test/colbrowser  ../lib/libfltk.a -ldl -lpthread -lSM -lICE -lX11 -lXext 

@@ -1,0 +1,1 @@
+/usr/bin/c++     -pthread -rdynamic CMakeFiles/fast_slow.dir/fast_slow.cxx.o  -o ../bin/test/fast_slow  ../lib/libfltk.a -ldl -lpthread -lSM -lICE -lX11 -lXext 

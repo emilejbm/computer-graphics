@@ -1,0 +1,1 @@
+/usr/bin/c++     -pthread -rdynamic CMakeFiles/preferences.dir/preferences.cxx.o  -o ../bin/test/preferences  ../lib/libfltk.a -ldl -lpthread -lSM -lICE -lX11 -lXext 

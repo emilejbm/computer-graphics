@@ -1,0 +1,1 @@
+/usr/bin/c++     -pthread -rdynamic CMakeFiles/resize.dir/resize.cxx.o  -o ../bin/test/resize  ../lib/libfltk.a -ldl -lpthread -lSM -lICE -lX11 -lXext 

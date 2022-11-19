@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../libtiff/tiff.h
+tiffconf.h
+../libtiff/tiffconf.h
+
+../libtiff/tiffio.h
+tiff.h
+../libtiff/tiff.h
+tiffvers.h
+../libtiff/tiffvers.h
+windows.h
+-
+stdio.h
+-
+stdarg.h
+-
+
+../libtiff/tiffvers.h
+
+/home/emilejbm/Desktop/github/CS334-2022Fall/CS334/hw1_v2/deps/libtiff-master/test/raw_decode.c
+tif_config.h
+/home/emilejbm/Desktop/github/CS334-2022Fall/CS334/hw1_v2/deps/libtiff-master/test/tif_config.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+unistd.h
+-
+tiffio.h
+/home/emilejbm/Desktop/github/CS334-2022Fall/CS334/hw1_v2/deps/libtiff-master/test/tiffio.h
+jpeglib.h
+/home/emilejbm/Desktop/github/CS334-2022Fall/CS334/hw1_v2/deps/libtiff-master/test/jpeglib.h
+
+libtiff/tif_config.h
+
+libtiff/tiffconf.h
+

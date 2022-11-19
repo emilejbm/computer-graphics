@@ -1,0 +1,1 @@
+/usr/bin/c++     -pthread -rdynamic CMakeFiles/boxtype.dir/boxtype.cxx.o  -o ../bin/test/boxtype  ../lib/libfltk.a -ldl -lpthread -lSM -lICE -lX11 -lXext 
