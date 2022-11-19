@@ -7,8 +7,6 @@
 
 using namespace std;
 
-
-
 #include <fstream>
 #include <iostream>
 
@@ -215,6 +213,9 @@ void TM::RenderWireFrame(PPC *ppc, FrameBuffer *fb) {
 //
 void TM::RenderFilled(PPC *ppc, FrameBuffer *fb, FrameBuffer* shadowfb, PPC* lights, float* augments) {
 
+	
+    // render with model space interpolation of textures and colors	
+	
     for (int tri = 0; tri < trisN; tri++) {
         V3 vs[3], cs[3], ns[3], ttcs[3];
         for (int vi = 0; vi < 3; vi++) {
@@ -274,14 +275,9 @@ void TM::RenderFilled(PPC *ppc, FrameBuffer *fb, FrameBuffer* shadowfb, PPC* lig
 
         V3 s;
         V3 t;
-//        bool flipX = false;
-//        bool flipY = false;
-//        int remX = 0;
-//        int remY = 0;
 
         for (int v = top; v <= bottom; v++) {
-//            remX = 0;
-//            flipX = false;
+
             for (int u = left; u <= right; u++) {
 
                 V3 pixv(.5f + (float)u, .5f + (float)v, 1.0f);
@@ -292,44 +288,10 @@ void TM::RenderFilled(PPC *ppc, FrameBuffer *fb, FrameBuffer* shadowfb, PPC* lig
                 if (fb->IsCloserThenSet(currz, u, v)) {
                     V3 currCol = lecols*pixv;
                     V3 currNormal = (lenormals*pixv).normalizedVec();
-                    //currCol = currCol.Light(V3(1.0f, 0.0f, 0.0f), 0.1f, V3(0.0f, 0.0f, -1.0f), currNormal);
+             
                     fb->Set(u, v, currCol.GetColor());
                     if (textures) {
-//                        if(remX > textures->w){
-//                            remX = 0;
-//                            flipX = !flipX;
-//                        }
-//                        if(remY > textures->h){
-//                            remY = 0;
-//                            flipY = !flipY;
-//                        }
-//                        if(!flipX && !flipY){
-//                            tcs[0] = A;
-//                            tcs[1] = B;
-//                            tcs[2] = C;
-//                            tcs[3] = D;
-//                        }
-//                        else if(flipX && !flipY){
-//                            //flipped x
-//                            tcs[0] = D;
-//                            tcs[1] = C;
-//                            tcs[2] = B;
-//                            tcs[3] = A;
-//                        }
-//                        else if(!flipX && flipY){
-//                            //flipped y
-//                            tcs[0] = B;
-//                            tcs[1] = A;
-//                            tcs[2] = D;
-//                            tcs[3] = C;
-//                        }
-//                        else if(flipX && flipY){
-//                            //flipped xy
-//                            tcs[0] = C;
-//                            tcs[1] = D;
-//                            tcs[2] = A;
-//                            tcs[3] = B;
-//                        }
+
                         V3 currtcs = letcs*pixv;
                         for(int i=0; i < 3; i++){
                             //ttcs[i] = tcs[tris[3 * tri + i]];
@@ -344,16 +306,14 @@ void TM::RenderFilled(PPC *ppc, FrameBuffer *fb, FrameBuffer* shadowfb, PPC* lig
                         //fb->Set(u, v, textures->LookUpNN(s_interp, t_interp));
                     }
                 }
-              //  remX++;
-            }
-            //remY++;
+            }    
         }
-
     }
-
 }
 
 void TM::RenderEnvironment(PPC *ppc, FrameBuffer *fb, CubeMap *cm){
+
+    // render environment from cube map first, then render tm objects
     V3 dir;
     float texU, texV;
     int tU, tV, face;
@@ -439,6 +399,9 @@ void TM::RenderEnvironment(PPC *ppc, FrameBuffer *fb, CubeMap *cm){
 
 
 void TM::RenderFilled(PPC *ppc, FrameBuffer *fb){
+
+    // screen space interpolation of tm object colors, normals
+    
     for (int tri = 0; tri < trisN; tri++) {
         V3 vs[3], cs[3], ns[3], ttcs[3];
         for (int vi = 0; vi < 3; vi++) {
@@ -520,117 +483,6 @@ void TM::RenderFilled(PPC *ppc, FrameBuffer *fb){
         }
     }
 }
-
-
-
-
-
-//void TM::RenderFilled(PPC *ppc, FrameBuffer *fb, FrameBuffer* shadowfb, PPC* lights, float* augments) {
-//    M33 interpolationM = M33();
-//    for (int tri = 0; tri < trisN; tri++) {
-//        V3 vs[3], cs[3], ns[3], ttcs[3];
-//        for (int vi = 0; vi < 3; vi++) {
-//            vs[vi] = verts[tris[3 * tri + vi]];
-//            cs[vi] = cols[tris[3 * tri + vi]];
-//            ns[vi] = normals[tris[3 * tri + vi]];
-//            if (tcs)
-//                ttcs[vi] = tcs[tris[3 * tri + vi]];
-//        }
-//
-//        V3 pvs[3];
-//
-//        int needContinue = 0;
-//        for (int vi = 0; vi < 3; vi++) {
-//            if (!ppc->Project(vs[vi], pvs[vi])) {
-//                needContinue = 1;
-//                break;
-//            }
-//        }
-//        if (needContinue)
-//            continue;
-//
-//        AABB aabb(pvs[0]);
-//        aabb.AddPoint(pvs[1]);
-//        aabb.AddPoint(pvs[2]);
-//        if (!aabb.ClipWithFrame(fb->w, fb->h))
-//            continue;
-//
-//        int top = (int)(aabb.minv[1] + 0.5f);
-//        int bottom = (int)(aabb.maxv[1] - 0.5f);
-//        int left = (int)(aabb.minv[0] + 0.5f);
-//        int right = (int)(aabb.maxv[0] - 0.5f);
-//
-//        M33 edges;
-//        edges[0].SetAsEdgeEquation(pvs[0], pvs[1], pvs[2]);
-//        edges[1].SetAsEdgeEquation(pvs[1], pvs[2], pvs[0]);
-//        edges[2].SetAsEdgeEquation(pvs[2], pvs[0], pvs[1]);
-//
-//        V3 u_vec = V3(pvs[0].xyz[0], pvs[1].xyz[0], pvs[2].xyz[0]);
-//        V3 v_vec = V3(pvs[0].xyz[1], pvs[1].xyz[1], pvs[2].xyz[1]);
-//        V3 z_vec = V3(pvs[0].xyz[2], pvs[1].xyz[2], pvs[2].xyz[2]);
-//
-//        M33 colInterp; M33 normInterp; M33 tcsInterp; M33 modelSpaceInterp;
-//        normInterp[0] = ns[0]; normInterp[1] = ns[1]; normInterp[2] = ns[2];
-//        colInterp[0] = cs[0]; colInterp[1] = cs[1]; colInterp[2] = cs[2];
-//        tcsInterp[0] = ttcs[0]; tcsInterp[1] = ttcs[1]; tcsInterp[2] = ttcs[2];
-//
-//        modelSpaceInterp.setColumn(0, vs[0]-ppc->C);
-//        modelSpaceInterp.setColumn(1, vs[1]-ppc->C);
-//        modelSpaceInterp.setColumn(2, vs[2]-ppc->C);
-//        M33 abc; abc.setColumn(0, ppc->a); abc.setColumn(1, ppc->b); abc.setColumn(2, ppc->c);
-//        modelSpaceInterp = modelSpaceInterp.invert() * abc;
-//
-//        V3 s = V3(0.0f, 0.0f, 0.0f);
-//        V3 t = V3(0.0f, 0.0f, 0.0f);
-//        for(int i=0; i < 3; i++){
-//            s[i] = ttcs[i].xyz[0];
-//            t[i] = ttcs[i].xyz[1];
-//        }
-//
-//        interpolationM.setColumn(0, u_vec);
-//        interpolationM.setColumn(1, v_vec);
-//        interpolationM.setColumn(2, V3(1.0f, 1.0f, 1.0f));
-//        interpolationM = interpolationM.invert();
-//
-//        V3 zInterp = interpolationM * z_vec;
-//        colInterp = (interpolationM * colInterp).transpose();
-//        normInterp = (interpolationM * normInterp).transpose();
-//        tcsInterp = (interpolationM * tcsInterp).transpose();
-//
-//        for (int currV = top; currV <= bottom; currV++) {
-//            for (int currU = left; currU <= right; currU++) {
-//                V3 currPix(.5f + (float) currU, .5f + (float) currV, 1.0f);
-//                V3 sides = edges * currPix;
-//
-//                //if visible
-//                if (sides[0] > 0.0f && sides[1] > 0.0f && sides[2] > 0.0f) {
-//                    float currZ =(zInterp * currPix);
-//
-//                    if (fb->IsCloserThenSet(currZ, currU, currV)) {
-//                        V3 newCol = colInterp * currPix;
-//                        V3 newNormal = (normInterp * currPix).normalizedVec();
-//                        //newCol = newCol.Light(newCol, 0.5f, lights[0].GetVD(), newNormal, ppc->GetVD(), augments);
-//                        fb->Set(currU, currV, newCol.GetColor());
-//                        if (textures) {
-//                            //V3 currtcs = tcsInterp*currPix;
-//                            float denom = (modelSpaceInterp.getColumn(0) * currU * V3(1.0f, 1.0f ,1.0f)) + (modelSpaceInterp.getColumn(1) * currV * V3(1.0f, 1.0f ,1.0f)) + (modelSpaceInterp.getColumn(2) * V3(1.0f, 1.0f ,1.0f));
-//                            float s_interp = ((modelSpaceInterp.getColumn(0) * s * currU) + (modelSpaceInterp.getColumn(1) * s * currV) + (modelSpaceInterp.getColumn(2) * s)) / denom;
-//                            float t_interp = ((modelSpaceInterp.getColumn(0) * t * currU) + (modelSpaceInterp.getColumn(1) * t * currV) + (modelSpaceInterp.getColumn(2) * t)) / denom;
-//                            fb->Set(currU, currV, textures->LookUpNN(s_interp, t_interp));
-//                            //fb->Set(currU, currV, texture->LookUpBilinear(s_interp, t_interp));
-//                        }
-//                    }
-//
-//                }
-//                else{
-//                    continue;
-//                }
-//
-//            }
-//        }
-//    }
-//
-//}
 
 
 V3 TM::GetCenter() {
